@@ -144,8 +144,8 @@ Esto lo podemos encontrar en el fichero [`problem1.pddl`](problem1.pddl) .
             
 El primer panificador que vamos a utilizar es el que trae el propio programa Visual Studio Code (VSC). Que podemos encontrar en [solver.planning.domains/solve](http://solver.planning.domains/solve). La solución la da el propio Visual Studio Code:
 
-<img  src="img/solucion1imagen1.png" width="49%" />
 <img align= "right" src="img/solucion1imagen2.png" width="49%" /> 
+<img  src="img/solucion1imagen1.png" width="49%" />
 
 
 ### Probando otros planificadores
