@@ -144,8 +144,8 @@ Esto lo podemos encontrar en el fichero [`problem1.pddl`](problem1.pddl) .
             
 El primer panificador que vamos a utilizar es el que trae el propio programa Visual Studio Code (VSC). Que podemos encontrar en [solver.planning.domains/solve](http://solver.planning.domains/solve). La solución la da el propio Visual Studio Code:
 
-<img src="img/solucion1imagen1.png" width="49.68%" />
-<img src="img/solucion1imagen2.png" width="49.68%" /> 
+<img src="img/solucion1imagen1.png" width="49%" />
+<img src="img/solucion1imagen2.png" width="49%" /> 
 
 
 ### Probando otros planificadores
@@ -154,24 +154,84 @@ Los planificadores que probaremos son los que nos funcionaron en la primera acti
 
 #### DecStar
 
-<img align = "right" src="img/solucionDecStar.png"  width="51%" >
-
-
-La ejecución se produce sin problemas y nos arroja el una solución ([Solución DecStar](img/solucionDecStar.png)) en este caso primero recoge al segundo enfermo VSC
-
-
-
-
-
-<img align = "left" src="img/solucionSYMPLE.png" width="51%" />
+La ejecución se produce sin problemas y nos arroja el una solución ([Solución DecStar](img/solucionDecStar.png)) en este caso primero recoge al segundo enfermo.
 
 #### SYMPLE
-<div style="text-align: right"> De igual modo, cuando ejecutamos el planificador SYMPLE nos arroja la misma solución ([Solución SYMPLE](img/solucionSYMPLE.png)) que con el planificador predeterminado de VSC. </div>
+ De igual modo, cuando ejecutamos el planificador SYMPLE nos arroja la misma solución ([Solución SYMPLE](img/solucionSYMPLE.png)) que con el planificador predeterminado de VSC.
  
-<img align = "right" src="img/solucionScorpion.png" width="51%" /> 
-
 #### Scorpion
 En este caso, nos ocurre igual que en la primera actividad, tarda más de 200 segundos en devolver la solución, pero finalmente también devuelve una solución ([Solución Scorpion](img/solucionScorpion.png)), en la cual  la ambulancia recoge primero al enfermo 1.
 
+## Más problemas
+<img align="right" width="50%" src="img/A2-Medico-2.png">
+### Dos hospitales
 
 
+
+Otro  problema  que  vamos  a  probar  es  elsiguiente. Tendremos dos hospitales en dos localizaciones distintas, y dos enfermos de forma que cada enfermo este más cerca de uno de los hospitales, pero solo habrá una ambulancia.Lo modelamos de la siguiente manera. ([`problem2.pddl`](problem2.pddl))
+    
+    (:objects 
+        loc1 loc2 loc3 loc4 - localizacion
+        hos1 hos2 - hospital
+        amb1 - ambulancia
+        enf1 enf2 - enfermo
+    )
+    (:init
+        (localizado hos1 loc1)
+        (localizado hos2 loc2)
+        (localizado amb1 loc1)
+        (localizado enf1 loc3)
+        (localizado enf2 loc4)
+        (conectados loc1 loc2)
+        (conectados loc2 loc1)
+        (conectados loc2 loc4)
+        (conectados loc4 loc2)
+        (conectados loc4 loc3)
+        (conectados loc3 loc4)
+        (conectados loc1 loc3)
+        (conectados loc3 loc1)
+    )
+    (:goal (and
+        (hospitalizado enf1)
+        (hospitalizado enf2)
+    ))
+
+<img align="right" width="60%" src="img/solucion2imagen1.png">
+
+ Para calcular la solución utilizaremos el planificador que trae VSC, ya que es mucho más cómodo. La solución es la mostrada en la figura de la derecha. Como vemos, la ambulancia lleva a cada enfermo al hospital más cercano. 
+
+
+ 
+ ### Dos ambulancias
+
+ <img align="right" width="50%" src="img/A2-Medico-3.png">
+
+ En este caso vamos a añadir una ambulancia, pero dejaremos, como en el problema inicial, un hospital y dos enfermos, también les daremos más caminos conectando los lugares L3 y L1. ([`problem3.pddl`](problem3.pddl))
+
+    (:objects 
+        loc1 loc2 loc3 loc4 - localizacion 
+        hos1  - hospital
+        amb1 amb2 - ambulancia
+        enf1 enf2 - enfermo
+    )
+    (:init
+        (localizado hos1 loc1)
+        (localizado amb1 loc1)
+        (localizado amb2 loc1)
+        (localizado enf1 loc3)
+        (localizado enf2 loc4)
+        (conectados loc1 loc2)
+        (conectados loc2 loc1)
+        (conectados loc2 loc4)
+        (conectados loc4 loc2)
+        (conectados loc4 loc3)
+        (conectados loc3 loc4)
+    )
+    (:goal (and
+        (hospitalizado enf1)
+        (hospitalizado enf2)
+    ))
+
+<img align="right" width="60%" src="img/solucion3imagen1.png">
+
+ La solución que nos da VSC es la de la figura de la derecha.
