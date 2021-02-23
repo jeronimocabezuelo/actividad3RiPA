@@ -4,13 +4,10 @@ Esta es la actividad realizada por Jerónimo Cabezuelo Ruiz para la asignatura R
 En ella tenemos que modelar un ploblema dado en formato PDDL.
 
 ## Definición del problema
-    
+<img align="right" width="50%" src="img/A2-Medico.png">
+
 En el problema planteado tenemos cuatro localizaciones, un hospital, una ambulancia y dos enfermos como la ilustración  
 
-<p align="center">
-  <img src="img/A2-Medico.png" 
-        width="200"/>
-</p>
 
 Donde las localizaciones están conectadas L1 con L2, L2 con L4 y L4 con L3, todas en ambas direcciones. La ambulancia y el hospital se encuentran en L1. Y hay un paciente en L3 y otro en L4. El objetivo es trasladar todos los pacientes al hospital. Las acciones que se pueden realizar son:
 - Conducir la ambulancia de una posición a otra.
@@ -147,11 +144,34 @@ Esto lo podemos encontrar en el fichero [`problem1.pddl`](problem1.pddl) .
             
 El primer panificador que vamos a utilizar es el que trae el propio programa Visual Studio Code (VSC). Que podemos encontrar en [solver.planning.domains/solve](http://solver.planning.domains/solve). La solución la da el propio Visual Studio Code:
 
-<p float="left">
-  <img src="img/solucion1imagen1.png" width="350" />
-  <img src="img/solucion1imagen2.png" width="350" /> 
-</p>
+<img src="img/solucion1imagen1.png" width="49.68%" />
+<img src="img/solucion1imagen2.png" width="49.68%" /> 
 
+
+### Probando otros planificadores
+
+Los planificadores que probaremos son los que nos funcionaron en la primera actividad, DecStar, SYMPLE y Scorpion. Para ello hemos subido a [GitHub](https://github.com/jeronimocabezuelo/actividad3RiPA) los archivos [`domainAmbulancias.pddl`](domainAmbulancias.pddl) y [`problem1.pddl`](problem1.pddl) y hemos seguido las instrucciones de la primera actividad cambiando la dirección del archivo de ejemplo por los de [GitHub](https://github.com/jeronimocabezuelo/actividad3RiPA), para poder descargarlos con vagrant. 
+
+#### DecStar
+
+<img align = "right" src="img/solucionDecStar.png"  width="51%" >
+
+
+La ejecución se produce sin problemas y nos arroja el una solución ([Solución DecStar](img/solucionDecStar.png)) en este caso primero recoge al segundo enfermo VSC
+
+
+
+
+
+<img align = "left" src="img/solucionSYMPLE.png" width="51%" />
+
+#### SYMPLE
+<div style="text-align: right"> De igual modo, cuando ejecutamos el planificador SYMPLE nos arroja la misma solución ([Solución SYMPLE](img/solucionSYMPLE.png)) que con el planificador predeterminado de VSC. </div>
+ 
+<img align = "right" src="img/solucionScorpion.png" width="51%" /> 
+
+#### Scorpion
+En este caso, nos ocurre igual que en la primera actividad, tarda más de 200 segundos en devolver la solución, pero finalmente también devuelve una solución ([Solución Scorpion](img/solucionScorpion.png)), en la cual  la ambulancia recoge primero al enfermo 1.
 
 
 
