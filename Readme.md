@@ -48,7 +48,7 @@ Ahora definimos los *predicates*
         
 Aquí tenemos que hacer un par de apuntes. El primero es que el objeto *elemento* lo definimos para poder localizar cualquiera de los elementos (hospital, enfermo o ambulancia). Por otro lado, cuando un enfermo es trasladado a un hospital lo guardamos en dos predicados distintos, por un lado guardamos que el enfermo está en algún hospital, con *enHospital*, y en otro guardamos en qué hospital está, en *hospitalizado*. Esto lo hacemos para cuando tengamos más hospitales, nos dará igual en que hospital esté lo único que exigiremos es que esté en algún hospital. De igual manera guardamos, con *cargaEnfermo*, qué enfermo es el que está en la ambulancia y en *cargada* simplemente guardamos que la ambulancia esta cargada.
         
-Vamos ahora a ver los *action*, la primera es para mover las ambulancias.
+Vamos ahora a ver los *action*, el primero es para mover las ambulancias.
 
     (:action mueveAmbulancia
         :parameters (?amb - ambulancia ?locInicial - localizacion ?locFinal - localizacion)
