@@ -237,4 +237,4 @@ Otro  problema  que  vamos  a  probar  es  elsiguiente. Tendremos dos hospitales
 
 <img align="right" width="60%" src="img/solucion3imagen1.png">
 
- La solución que nos da VSC es la de la figura de la derecha.
+ La solución que nos da VSC es la de la figura de la derecha. Es curioso ver que aunque tenemos dos ambulancias, primero una de ellas va a por un enfermo y cuando vuelve y deja al enfermo, la otra ambulancia va a por el otro enfermo. Podría ser interesante añadir de alguna manera un contador de tiempo que pasan los enfermos sin recoger y se deba minimizar.
