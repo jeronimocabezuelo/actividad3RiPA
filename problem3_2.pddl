@@ -23,4 +23,3 @@
     (hospitalizado enf2)
 ))
 )
-;IDEA añadir tiempo en moverse

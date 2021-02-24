@@ -44,7 +44,7 @@ Ahora definimos los *predicates*
 - *cargaEnfermo* nos dice si una ambulancia tiene a un enfermo concreto cargado
 - *cargada* nos dice si una ambulancia esta cargada con algún enfermo
 - *enHospital* nos dice si un determinado enfermo esta en un determinado hospital
-- *hospitalizado este solo dice si un enfermo está en algún hospital
+- *hospitalizado* este solo dice si un enfermo está en algún hospital
         
 Aquí tenemos que hacer un par de apuntes. El primero es que el objeto *elemento* lo definimos para poder localizar cualquiera de los elementos (hospital, enfermo o ambulancia). Por otro lado, cuando un enfermo es trasladado a un hospital lo guardamos en dos predicados distintos, por un lado guardamos que el enfermo está en algún hospital, con *enHospital*, y en otro guardamos en qué hospital está, en *hospitalizado*. Esto lo hacemos para cuando tengamos más hospitales, nos dará igual en que hospital esté lo único que exigiremos es que esté en algún hospital. De igual manera guardamos, con *cargaEnfermo*, qué enfermo es el que está en la ambulancia y en *cargada* simplemente guardamos que la ambulancia esta cargada.
         
@@ -145,11 +145,7 @@ Esto lo podemos encontrar en el fichero [`problem1.pddl`](problem1.pddl) .
 
 <img align= "right" src="img/solucion1imagen2.png" width="50%" /> 
 
-El primer panificador que vamos a utilizar es el que trae el propio programa Visual Studio Code (VSC). Que podemos encontrar en [solver.planning.domains/solve](http://solver.planning.domains/solve). La solución la da el propio Visual Studio Code. (figuras de la derecha)
-
-
-
-
+El primer panificador que vamos a utilizar es el que trae el propio programa Visual Studio Code (VSC). Que podemos encontrar en [solver.planning.domains/solve](http://solver.planning.domains/solve). La solución que da Visual Studio Code. (figuras de la derecha)
 
 ### Probando otros planificadores
 
@@ -157,21 +153,22 @@ Los planificadores que probaremos son los que nos funcionaron en la primera acti
 
 #### DecStar
 
-La ejecución se produce sin problemas y nos arroja el una solución ([Solución DecStar](img/solucionDecStar.png)) en este caso primero recoge al segundo enfermo.
+La ejecución se produce sin problemas y nos arroja una solución ([Solución DecStar](img/solucionDecStar.png)) en este caso primero recoge al segundo enfermo.
 
 #### SYMPLE
- De igual modo, cuando ejecutamos el planificador SYMPLE nos arroja la misma solución ([Solución SYMPLE](img/solucionSYMPLE.png)) que con el planificador predeterminado de VSC.
+De igual modo, cuando ejecutamos el planificador SYMPLE nos arroja la misma solución ([Solución SYMPLE](img/solucionSYMPLE.png)) que con el planificador predeterminado de VSC.
  
 #### Scorpion
-En este caso, nos ocurre igual que en la primera actividad, tarda más de 200 segundos en devolver la solución, pero finalmente también devuelve una solución ([Solución Scorpion](img/solucionScorpion.png)), en la cual  la ambulancia recoge primero al enfermo 1.
+En este caso, nos ocurre igual que en la primera actividad, tarda más de 200 segundos en devolver la solución, pero finalmente también devuelve una solución ([Solución Scorpion](img/solucionScorpion.png)), en la cual la ambulancia recoge primero al enfermo 1.
 
 ## Más problemas
 <img align="right" width="50%" src="img/A2-Medico-2.png">
+
 ### Dos hospitales
 
 
 
-Otro  problema  que  vamos  a  probar  es  elsiguiente. Tendremos dos hospitales en dos localizaciones distintas, y dos enfermos de forma que cada enfermo este más cerca de uno de los hospitales, pero solo habrá una ambulancia.Lo modelamos de la siguiente manera. ([`problem2.pddl`](problem2.pddl))
+Otro  problema  que  vamos  a  probar  es  elsiguiente. Tendremos dos hospitales en dos localizaciones distintas, y dos enfermos de forma que cada enfermo este más cerca de uno de los hospitales, pero solo habrá una ambulancia. Lo modelamos de la siguiente manera. ([`problem2.pddl`](problem2.pddl))
     
     (:objects 
         loc1 loc2 loc3 loc4 - localizacion
@@ -237,4 +234,4 @@ Otro  problema  que  vamos  a  probar  es  elsiguiente. Tendremos dos hospitales
 
 <img align="right" width="60%" src="img/solucion3imagen1.png">
 
- La solución que nos da VSC es la de la figura de la derecha. Es curioso ver que aunque tenemos dos ambulancias, primero una de ellas va a por un enfermo y cuando vuelve y deja al enfermo, la otra ambulancia va a por el otro enfermo. Podría ser interesante añadir de alguna manera un contador de tiempo que pasan los enfermos sin recoger y se deba minimizar.
+ La solución que nos da VSC es la de la figura de la derecha. Es curioso ver que aunque tenemos dos ambulancias, primero una de ellas va a por un enfermo y cuando vuelve y deja al enfermo, la otra ambulancia va a por el otro enfermo. Podría ser interesante añadir de alguna manera un contador de tiempo que pasan los enfermos sin recoger y se deba minimizar. He intentado probar esto con *durative-actions* pero los planificadores no están preparados para tratarlos. (Archivos ([`domainAmbulancias2.pddl`](domainAmbulancias2.pddl))([`problem3_2.pddl`](problem3_2.pddl)))
