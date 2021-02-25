@@ -51,7 +51,9 @@ Aquí tenemos que hacer un par de apuntes. El primero es que el objeto *elemento
 Vamos ahora a ver los *action*, el primero es para mover las ambulancias.
 
     (:action mueveAmbulancia
-        :parameters (?amb - ambulancia ?locInicial - localizacion ?locFinal - localizacion)
+        :parameters (?amb - ambulancia 
+                     ?locInicial - localizacion 
+                     ?locFinal - localizacion)
         :precondition (and 
             (localizado ?amb ?locInicial)
             (conectados ?locInicial ?locFinal)
@@ -66,7 +68,9 @@ Los parámetros que tenemos son la ambulancia qué se va a mover, la localizaci�
 La segunda *action* es para cargar un enfermo en una ambulancia.
 
     (:action cargarEnfermo
-    :parameters (?amb - ambulancia ?enf - enfermo ?loc - localizacion)
+    :parameters (?amb - ambulancia 
+                 ?enf - enfermo 
+                 ?loc - localizacion)
         :precondition (and 
             (localizado ?amb ?loc)
             (localizado ?enf ?loc)
@@ -83,7 +87,10 @@ En  este caso los parámetros son la ambulancia, el enfermo y la localización. 
 La última *action* es para soltar a un enfermo.
 
     (:action soltarEnfermo
-        :parameters (?amb - ambulancia ?enf - enfermo ?hos - hospital ?loc - localizacion)
+        :parameters (?amb - ambulancia 
+                     ?enf - enfermo 
+                     ?hos - hospital 
+                     ?loc - localizacion)
         :precondition (and
             (localizado ?amb ?loc)
             (localizado ?hos ?loc)

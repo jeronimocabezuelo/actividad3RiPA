@@ -23,7 +23,9 @@
 
 
 (:action mueveAmbulancia
-    :parameters (?amb - ambulancia ?locInicial - localizacion ?locFinal - localizacion)
+    :parameters (?amb - ambulancia 
+                 ?locInicial - localizacion 
+                 ?locFinal - localizacion)
     :precondition (and 
         (localizado ?amb ?locInicial)
         (conectados ?locInicial ?locFinal)
@@ -34,7 +36,9 @@
     )
 )
 (:action cargarEnfermo
-   :parameters (?amb - ambulancia ?enf - enfermo ?loc - localizacion)
+   :parameters (?amb - ambulancia 
+                ?enf - enfermo 
+                ?loc - localizacion)
     :precondition (and 
         (localizado ?amb ?loc)
         (localizado ?enf ?loc)
@@ -47,7 +51,10 @@
     )
 )
 (:action soltarEnfermo
-    :parameters (?amb - ambulancia ?enf - enfermo ?hos - hospital ?loc - localizacion)
+    :parameters (?amb - ambulancia 
+                 ?enf - enfermo 
+                 ?hos - hospital 
+                 ?loc - localizacion)
     :precondition (and
         (localizado ?amb ?loc)
         (localizado ?hos ?loc)
