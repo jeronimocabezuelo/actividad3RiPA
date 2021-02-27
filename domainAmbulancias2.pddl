@@ -2,7 +2,7 @@
 
 (define (domain ambulanciasDuration)
 
-(:requirements :strips :typing  :negative-preconditions :fluents ::durative-actions)
+(:requirements :strips :typing  :negative-preconditions :fluents :durative-actions)
 
 (:types 
     localizacion - object
@@ -21,13 +21,13 @@
 (:durative-action mueveAmbulancia
     :parameters (?amb - ambulancia ?locInicial - localizacion ?locFinal - localizacion)
     :duration (= ?duration 5)
-    :precondition (and 
-        (localizado ?amb ?locInicial)
-        (conectados ?locInicial ?locFinal)
+    :condition (and 
+        (at start (localizado ?amb ?locInicial))
+        (at start (conectados ?locInicial ?locFinal))
     )
     :effect (and 
-        (not(localizado ?amb ?locInicial))
-        (localizado ?amb ?locFinal)
+        (at start (not(localizado ?amb ?locInicial)))
+        (at end (localizado ?amb ?locFinal))
     )
 )
 (:action cargarEnfermo
