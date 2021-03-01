@@ -241,4 +241,8 @@ Otro  problema  que  vamos  a  probar  es  elsiguiente. Tendremos dos hospitales
 
 <img align="right" width="60%" src="img/solucion3imagen1.png">
 
- La solución que nos da VSC es la de la figura de la derecha. Es curioso ver que aunque tenemos dos ambulancias, primero una de ellas va a por un enfermo y cuando vuelve y deja al enfermo, la otra ambulancia va a por el otro enfermo. Podría ser interesante añadir de alguna manera un contador de tiempo que pasan los enfermos sin recoger y se deba minimizar. He intentado probar esto con *durative-actions* pero los planificadores no están preparados para tratarlos. (Archivos [`domainAmbulancias2.pddl`](domainAmbulancias2.pddl) y [`problem3_2.pddl`](problem3_2.pddl))
+ La solución que nos da VSC es la de la figura de la derecha. Es curioso ver que aunque tenemos dos ambulancias, primero una de ellas va a por un enfermo y cuando vuelve y deja al enfermo, la otra ambulancia va a por el otro enfermo. 
+ 
+ Podría ser interesante añadir de alguna manera un contador de tiempo que pasan los enfermos sin recoger y se deba minimizar. Al intentar probar esto con *durative-actions* descubí que los planificadores no están preparados para tratarlos. (Archivos [`domainAmbulancias2.pddl`](domainAmbulancias2.pddl) y [`problem3_2.pddl`](problem3_2.pddl))
+
+ Para poder utilizar los *durative-actions* he tenido que seguir el proceso descrito en el siguiente enlace: https://docs.google.com/document/d/1OcnzWQ2NT9cTAObDg8xflXKL2zMRMYudb4OFZzDkALg/edit . 
