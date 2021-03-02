@@ -254,7 +254,7 @@ Otro  problema  que  vamos  a  probar  es  elsiguiente. Tendremos dos hospitales
 Ahora vamos a añadir más complejidad al problema. Cuando una ambulancia llega a recoger un enfermo este tendrá un nivel de gravedad, de forma que el tiempo que tarda en recogerlo dependerá de este nivel de gravedad. También vamos a añadir un tiempo que se tarda en ir desde una localización a otra que sea variable dependiendo de las localizaciones. Esto lo podemos encontrar en el archivo  [`domainAmbulancias3.pddl`](domainAmbulancias3.pddl). 
 <img align="right" width="50%" src="img/A2-Medico-4.png">
 Para probar esto vamos a crear un problema un poco más complejo tendremos 10 localizaciones, un único hospital situado en el centro con dos ambulancias y 8 enfermos situados como en la imagen, las localizaciones están conectadas con unas distancias que también se pueden ver en la imagen. Este problema lo podemos encontrar en el archivo [`problem4.pddl`](problem4.pddl). Le pasamos el problema al VSC con el planificador [LPG-TD](https://lpg.unibs.it/lpg/download-lpg-td.html) y nos devuelve lo siguiente:
-<img align="left" width="50%" src="img/solucion4.png">
+<img align="left" width="49.9%" src="img/solucion4.png">
 
 Lo vemos como un gif:
-<img align="right" width="50%" src="img/solucion4.gif">
+<img align="right" width="49.9%" src="img/solucion4.gif">
