@@ -1,24 +1,23 @@
 (define (problem problemaDosAmbulanciasDuration2) (:domain ambulanciasDuration2)
 (:objects 
     l1 l2 l3 l4 l5 l6 l7 l8 l9 l10 - localizacion 
-    hos1 hos2 - hospital
+    hos1  - hospital
     amb1 amb2 - ambulancia
     e1 e2 e3 e4 e5 e6 e7 e8 - enfermo
 )
 (:init
-    (localizado hos1 l9)
-    (localizado hos2 l5)
-    
-    (localizado amb1 l9)
-    (localizado amb2 l5)
+    (localizado hos1 l1)
+
+    (localizado amb1 l1)
+    (localizado amb2 l1)
     
     (localizado e1 l3)
     (localizado e2 l4)
-    (localizado e3 l2)
+    (localizado e3 l5)
     (localizado e4 l6)
     (localizado e5 l7)
     (localizado e6 l8)
-    (localizado e7 l1)
+    (localizado e7 l9)
     (localizado e8 l10)
     
     (conectados l1 l3)
