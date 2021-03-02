@@ -39,7 +39,7 @@ Ahora definimos los *predicates*
         (hospitalizado ?enf - enfermo)
     )
 
-- *conectados* indica si dos localizaciones estan conectadas
+- *conectados* indica si dos localizaciones están conectadas
 - *localizado* este predicado servirá para situar los distintos elementos en las localizaciones
 - *cargaEnfermo* nos dice si una ambulancia tiene a un enfermo concreto cargado
 - *cargada* nos dice si una ambulancia esta cargada con algún enfermo
@@ -243,17 +243,17 @@ Otro  problema  que  vamos  a  probar  es  elsiguiente. Tendremos dos hospitales
 
  La solución que nos da VSC es la de la figura de la derecha. Es curioso ver que aunque tenemos dos ambulancias, primero una de ellas va a por un enfermo y cuando vuelve y deja al enfermo, la otra ambulancia va a por el otro enfermo. 
  
- Podría ser interesante añadir de alguna manera un contador de tiempo que pasan los enfermos sin recoger y se deba minimizar. Al intentar probar esto con *durative-actions* descubí que los planificadores no están preparados para tratarlos. (Archivos [`domainAmbulancias2.pddl`](domainAmbulancias2.pddl) y [`problem3_2.pddl`](problem3_2.pddl))
+ Podría ser interesante añadir de alguna manera un contador de tiempo que pasan los enfermos sin recoger y se deba minimizar. Al intentar probar esto con *durative-actions* descubrí que los planificadores no están preparados para tratarlos. (Archivos [`domainAmbulancias2.pddl`](domainAmbulancias2.pddl) y [`problem3_2.pddl`](problem3_2.pddl))
 
- Para poder utilizar los *durative-actions* he tenido que seguir el proceso descrito en el siguiente enlace: https://docs.google.com/document/d/1OcnzWQ2NT9cTAObDg8xflXKL2zMRMYudb4OFZzDkALg/edit . 
+ Para poder utilizar los *durative-actions* he tenido que seguir el proceso descrito en el siguiente enlace: https://n9.cl/6u5k . 
 
 <img align="right" width="55%" src="img/solucion3imagen2.png">
 
  Siguendo este proceso, podemos instalar el planificador [LPG-TD](https://lpg.unibs.it/lpg/download-lpg-td.html), que si admite *durative-action*. Gracias a el podemos calcular la solución, que vemos en la derecha.
 ### Añadiendo complejidad
-Ahora vamos a añadir más coplejidad al problema. Cuando una ambulancia llega a recoger un enfermo este tendra un nivel de gravedad, de forma que el tiempo que tarda en recogerlo dependera de este nivel de gravedad.  Tambien vamos a añadir un tiempo que se tarda en ir desde una localización a otra que sea varaible dependiendo de las localizaciones. Esto lo podemos encontrar en el archivo  [`domainAmbulancias3.pddl`](domainAmbulancias3.pddl). 
+Ahora vamos a añadir más complejidad al problema. Cuando una ambulancia llega a recoger un enfermo este tendrá un nivel de gravedad, de forma que el tiempo que tarda en recogerlo dependerá de este nivel de gravedad. También vamos a añadir un tiempo que se tarda en ir desde una localización a otra que sea variable dependiendo de las localizaciones. Esto lo podemos encontrar en el archivo  [`domainAmbulancias3.pddl`](domainAmbulancias3.pddl). 
 <img align="right" width="50%" src="img/A2-Medico-4.png">
-Para probar esto vamos a crear un problema un poco más complejo tendremos 10 localizaciones, un único hospital situado en el centro con dos ambulancias y 8 enfermos situados como en la imagen, las localizaciones estan conectadas con unas distancias que tambien se pueden ver en la imagen. Este problema lo podemos encontrar en el archivo [`problem4.pddl`](problem4.pddl). Le pasamos el probelma al VSC con el planificador [LPG-TD](https://lpg.unibs.it/lpg/download-lpg-td.html) y nos devuelve lo siguiente:
+Para probar esto vamos a crear un problema un poco más complejo tendremos 10 localizaciones, un único hospital situado en el centro con dos ambulancias y 8 enfermos situados como en la imagen, las localizaciones están conectadas con unas distancias que también se pueden ver en la imagen. Este problema lo podemos encontrar en el archivo [`problem4.pddl`](problem4.pddl). Le pasamos el problema al VSC con el planificador [LPG-TD](https://lpg.unibs.it/lpg/download-lpg-td.html) y nos devuelve lo siguiente:
 <img align="left" width="50%" src="img/solucion4.png">
 
 Lo vemos como un gif:
