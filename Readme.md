@@ -246,3 +246,9 @@ Otro  problema  que  vamos  a  probar  es  elsiguiente. Tendremos dos hospitales
  Podría ser interesante añadir de alguna manera un contador de tiempo que pasan los enfermos sin recoger y se deba minimizar. Al intentar probar esto con *durative-actions* descubí que los planificadores no están preparados para tratarlos. (Archivos [`domainAmbulancias2.pddl`](domainAmbulancias2.pddl) y [`problem3_2.pddl`](problem3_2.pddl))
 
  Para poder utilizar los *durative-actions* he tenido que seguir el proceso descrito en el siguiente enlace: https://docs.google.com/document/d/1OcnzWQ2NT9cTAObDg8xflXKL2zMRMYudb4OFZzDkALg/edit . 
+
+<img align="right" width="60%" src="img/solucion3imagen2.png">
+
+ Siguendo este proceso, podemos instalar el planificador [LPG-TD](https://lpg.unibs.it/lpg/download-lpg-td.html), que si admite *durative-action*. Gracias a el podemos calcular la solución, que vemos en la derecha.
+### Añadiendo complejidad
+Ahora vamos a añadir más coplejidad al problema. Cuando una ambulancia llega a recoger un enfermo este tendra un nivel de gravedad, de forma que el tiempo que tarda en recogerlo dependera de este nivel de gravedad.  Tambien vamos a añadir un tiempo que se tarda en ir desde una localización a otra que sea varaible dependiendo de las localizaciones. Esto lo podemos encontrar en el archivo  [`domainAmbulancias3.pddl`](domainAmbulancias3.pddl).
